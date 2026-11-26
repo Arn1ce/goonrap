@@ -31,8 +31,8 @@ export default async function handler(req, res) {
   try {
     const url = new URL(req.url, "http://localhost");
     const p = url.pathname.split("/").filter(Boolean).slice(1);
-    const id = id || url.searchParams.get("id") || "";
-    const cid = cid || url.searchParams.get("cid") || "";
+    const id = p[1] || url.searchParams.get("id") || "";
+    const cid = p[2] || url.searchParams.get("cid") || "";
     const code = process.env.ADMIN_CODE;
     if (!process.env.KV_REST_API_URL && !process.env.UPSTASH_REDIS_REST_URL) return send(res, { error: "База данных не подключена" }, 500);
     const admin = !!code && req.headers["x-code"] === code;
