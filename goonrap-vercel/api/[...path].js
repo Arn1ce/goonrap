@@ -31,7 +31,10 @@ export default async function handler(req, res) {
   try {
     const url = new URL(req.url, "http://localhost");
     const p = url.pathname.split("/").filter(Boolean).slice(1);
+    const id = id || url.searchParams.get("id") || "";
+    const cid = cid || url.searchParams.get("cid") || "";
     const code = process.env.ADMIN_CODE;
+    if (!process.env.KV_REST_API_URL && !process.env.UPSTASH_REDIS_REST_URL) return send(res, { error: "База данных не подключена" }, 500);
     const admin = !!code && req.headers["x-code"] === code;
     const body = req.body && typeof req.body === "object" ? req.body : {};
     const list = async () => (await redis.get("tracks")) || [];
@@ -41,7 +44,7 @@ export default async function handler(req, res) {
       const now = Date.now();
       const all = await list();
       if (admin) return send(res, all);
-      return send(res, all.map((t) => (t.releaseAt > now ? { ...t, audioUrl: undefined } : t)), 200, "public, s-maxage=10, stale-while-revalidate=60");
+      return send(res, all.map((t) => (t.releaseAt > now ? { ...t, audioUrl: undefined } : t)));
     }
 
     if (p[0] === "login") return send(res, { ok: admin }, admin ? 200 : 401);
@@ -63,23 +66,23 @@ export default async function handler(req, res) {
       return send(res, json);
     }
 
-    if (p[0] === "social" && ID.test(p[1] || "") && m === "GET") {
+    if (p[0] === "social" && ID.test(id || "") && m === "GET") {
       const v = String(url.searchParams.get("v") || "").slice(0, 80);
-      const [n, mine, cms] = await redis.pipeline().scard("fire:" + p[1]).sismember("fire:" + p[1], v || "-").lrange("cm:" + p[1], 0, 99).exec();
+      const [n, mine, cms] = await redis.pipeline().scard("fire:" + id).sismember("fire:" + id, v || "-").lrange("cm:" + id, 0, 99).exec();
       return send(res, { fire: n || 0, mine: !!mine, comments: cms || [] });
     }
 
-    if (p[0] === "fire" && ID.test(p[1] || "") && m === "POST") {
+    if (p[0] === "fire" && ID.test(id || "") && m === "POST") {
       const v = String(body.v || "").slice(0, 80);
       if (!v) return send(res, {}, 400);
-      const k = "fire:" + p[1];
+      const k = "fire:" + id;
       const had = await redis.sismember(k, v);
       if (had) await redis.srem(k, v); else await redis.sadd(k, v);
-      const [n, cms] = await redis.pipeline().scard(k).lrange("cm:" + p[1], 0, 99).exec();
+      const [n, cms] = await redis.pipeline().scard(k).lrange("cm:" + id, 0, 99).exec();
       return send(res, { fire: n || 0, mine: !had, comments: cms || [] });
     }
 
-    if (p[0] === "comment" && ID.test(p[1] || "") && m === "POST") {
+    if (p[0] === "comment" && ID.test(id || "") && m === "POST") {
       const name = clean(body.name, 24) || "Anon";
       const text = clean(body.text, 300);
       if (!text) return send(res, { error: "empty" }, 400);
@@ -98,17 +101,17 @@ export default async function handler(req, res) {
       r.last = now;
       await redis.set(key, r, { ex: 172800 });
       const c = { id: now.toString(36), name, text, t: now };
-      await redis.lpush("cm:" + p[1], c);
-      await redis.ltrim("cm:" + p[1], 0, 99);
-      return send(res, { comments: await redis.lrange("cm:" + p[1], 0, 99) });
+      await redis.lpush("cm:" + id, c);
+      await redis.ltrim("cm:" + id, 0, 99);
+      return send(res, { comments: await redis.lrange("cm:" + id, 0, 99) });
     }
 
     if (!admin) return send(res, { error: "Неверный код" }, 401);
 
-    if (p[0] === "comment" && ID.test(p[1] || "") && m === "DELETE") {
-      const k = "cm:" + p[1];
+    if (p[0] === "comment" && ID.test(id || "") && m === "DELETE") {
+      const k = "cm:" + id;
       const all = (await redis.lrange(k, 0, 99)) || [];
-      const hit = all.find((c) => c.id === p[2]);
+      const hit = all.find((c) => c.id === cid);
       if (hit) await redis.lrem(k, 1, hit);
       return send(res, { ok: true });
     }
@@ -122,9 +125,9 @@ export default async function handler(req, res) {
       return send(res, t);
     }
 
-    if (p[0] === "track" && ID.test(p[1] || "") && m === "PUT") {
+    if (p[0] === "track" && ID.test(id || "") && m === "PUT") {
       const all = await list();
-      const t = all.find((x) => x.id === p[1]);
+      const t = all.find((x) => x.id === id);
       if (!t) return send(res, { error: "Не найден" }, 404);
       apply(t, body);
       if (body.removeCover && t.coverUrl) { await safeDel(t.coverUrl); t.cover = false; t.coverUrl = ""; }
@@ -134,12 +137,12 @@ export default async function handler(req, res) {
       return send(res, t);
     }
 
-    if (p[0] === "track" && ID.test(p[1] || "") && m === "DELETE") {
+    if (p[0] === "track" && ID.test(id || "") && m === "DELETE") {
       const all = await list();
-      const t = all.find((x) => x.id === p[1]);
-      await redis.set("tracks", all.filter((x) => x.id !== p[1]));
+      const t = all.find((x) => x.id === id);
+      await redis.set("tracks", all.filter((x) => x.id !== id));
       if (t) { await safeDel(t.audioUrl); await safeDel(t.coverUrl); }
-      await redis.del("fire:" + p[1], "cm:" + p[1]);
+      await redis.del("fire:" + id, "cm:" + id);
       return send(res, { ok: true });
     }
 
