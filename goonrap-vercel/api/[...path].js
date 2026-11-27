@@ -24,7 +24,29 @@ function apply(t, b) {
   if (HEX.test(b.color)) t.color = b.color;
   if ("c2" in b) t.c2 = HEX.test(b.c2) ? b.c2 : "";
   if ("anim" in b) t.anim = ["none", "flow", "pulse", "hue"].includes(b.anim) ? b.anim : "none";
+  if ("gradientType" in b) t.gradientType = ["linear", "radial"].includes(b.gradientType) ? b.gradientType : "linear";
+  if ("flip" in b) t.flip = b.flip === true;
   if ("releaseAt" in b) t.releaseAt = Math.max(0, Number(b.releaseAt) || 0);
+  const num = (v, lo, hi, d) => { v = Number(v); return Number.isFinite(v) ? Math.min(hi, Math.max(lo, v)) : d; };
+  if ("angle" in b) t.angle = num(b.angle, 0, 360, 135);
+  if ("p1" in b) t.p1 = num(b.p1, 0, 70, 0);
+  if ("p2" in b) t.p2 = num(b.p2, 30, 100, 100);
+  if ("radialX" in b) t.radialX = num(b.radialX, 0, 100, 50);
+  if ("radialY" in b) t.radialY = num(b.radialY, 0, 100, 50);
+  if ("glow" in b) t.glow = num(b.glow, 0, 100, 55);
+  if ("animSpeed" in b) t.animSpeed = num(b.animSpeed, 1, 10, 5);
+  if ("animIntensity" in b) t.animIntensity = num(b.animIntensity, 0, 100, 55);
+  if ("waveH" in b) t.waveH = num(b.waveH, 0, 140, 80);
+  if ("waveSpeed" in b) t.waveSpeed = num(b.waveSpeed, 1, 10, 3);
+  if ("wave" in b) t.wave = ["mix", "c1", "c2", "white", "custom"].includes(b.wave) ? b.wave : "mix";
+  if ("waveColor1" in b && HEX.test(b.waveColor1)) t.waveColor1 = b.waveColor1;
+  if ("waveColor2" in b && HEX.test(b.waveColor2)) t.waveColor2 = b.waveColor2;
+  if ("waveOpacity" in b) t.waveOpacity = num(b.waveOpacity, 10, 100, 78);
+  if ("waveLayers" in b) t.waveLayers = Math.round(num(b.waveLayers, 1, 3, 3));
+  if ("waveDirection" in b) t.waveDirection = ["forward", "reverse"].includes(b.waveDirection) ? b.waveDirection : "forward";
+  if ("waveStyle" in b) t.waveStyle = ["soft", "bold", "minimal"].includes(b.waveStyle) ? b.waveStyle : "soft";
+  if ("waveOffset" in b) t.waveOffset = num(b.waveOffset, 0, 70, 0);
+  if ((t.p2 ?? 100) - (t.p1 ?? 0) < 10) { t.p1 = 0; t.p2 = 100; }
 }
 
 export default async function handler(req, res) {
@@ -118,7 +140,7 @@ export default async function handler(req, res) {
 
     if (p[0] === "track" && m === "POST") {
       if (!BLOB.test(body.audioUrl || "")) return send(res, { error: "Нужен mp3" }, 400);
-      const t = { id: Date.now().toString(36) + Math.random().toString(36).slice(2, 5), created: Date.now(), title: "Без названия", desc: "", color: "#8b5cf6", c2: "", anim: "none", releaseAt: 0, cover: false, audioUrl: body.audioUrl };
+      const t = { id: Date.now().toString(36) + Math.random().toString(36).slice(2, 5), created: Date.now(), title: "Без названия", desc: "", color: "#8b5cf6", c2: "", anim: "none", gradientType: "linear", flip: false, radialX: 50, radialY: 50, animSpeed: 5, animIntensity: 55, wave: "mix", waveColor1: "#ef4444", waveColor2: "#38bdf8", waveOpacity: 78, waveLayers: 3, waveDirection: "forward", waveStyle: "soft", waveOffset: 0, waveH: 80, waveSpeed: 3, releaseAt: 0, cover: false, audioUrl: body.audioUrl };
       apply(t, body);
       if (BLOB.test(body.coverUrl || "")) { t.cover = true; t.coverUrl = body.coverUrl; }
       await redis.set("tracks", [t, ...(await list())]);
