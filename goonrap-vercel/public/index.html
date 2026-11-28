@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#09070c"><meta name="description" content="GOONRAP — независимые релизы, рэп и музыка без рамок. Слушай новые треки, открывай артистов и поддерживай звучание.">
-<meta property="og:type" content="website"><meta property="og:title" content="GOONRAP — независимая музыка"><meta property="og:description" content="Свежие релизы и ближайшие анонсы GOONRAP.">
-<meta name="color-scheme" content="dark light"><title>GOONRAP — независимая музыка</title>
+<meta name="theme-color" content="#09050f"><title>GOONRAP</title>
 <style>
 :root{--bg:#09050f;--fg:#fff;--mut:#a99fbd;--card:#ffffff14;--glass:#1a1226e8;--a:#8b5cf6;--a2:#ec4899}
 [data-theme=light]{--bg:#f7f3fc;--fg:#18101f;--mut:#6d6480;--card:#0000000f;--glass:#fffffff0}
@@ -617,88 +615,6 @@ body:has(#up.show) :is(.blobs i,.card,.hero,#prof,#wave svg,.eq i,.qi){animation
 .pvwave svg{position:absolute;left:0;bottom:0;width:200%;height:100%;animation:wv var(--ws,9s) linear infinite}
 .pvwave .a{fill:var(--wv1);opacity:.6}.pvwave .b{fill:var(--wv2);opacity:.45;animation-direction:reverse;animation-duration:calc(var(--ws,9s)*1.55)}
 .pvw{min-height:150px}
-/* GOONRAP visual refresh */
-:root{--bg:#09070c;--fg:#f7f4fb;--mut:#aaa2b3;--card:#ffffff0d;--glass:#121017ed;--a:#a77bff;--a2:#ff5da8;color-scheme:dark}
-[data-theme=light]{--bg:#f7f5fa;--fg:#211a29;--mut:#71687b;--card:#20172b0e;--glass:#fffefaed;color-scheme:light}
-html{scroll-behavior:smooth;scroll-padding-top:92px}
-body{background:radial-gradient(ellipse at 48% -16%,#321c45 0,transparent 39%),radial-gradient(ellipse at 100% 42%,#1b1228 0,transparent 32%),var(--bg);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;letter-spacing:-.015em}
-body:before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.12;background-image:radial-gradient(#fff 0.55px,transparent .7px);background-size:5px 5px;mask-image:linear-gradient(to bottom,#000,transparent 82%)}
-#scene{max-width:1320px}
-header.site-header{position:sticky;top:0;margin:0 auto;padding:calc(env(safe-area-inset-top) + 14px) clamp(18px,4vw,52px) 14px;max-width:1320px;min-height:78px;border:0;border-bottom:1px solid color-mix(in srgb,var(--fg) 9%,transparent);border-radius:0;background:color-mix(in srgb,var(--bg) 78%,transparent);box-shadow:0 12px 32px #00000010;backdrop-filter:blur(26px) saturate(1.4)}
-.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--fg);min-width:max-content}
-.brand-mark{width:42px;height:42px;display:grid;place-items:center;border-radius:13px;background:linear-gradient(145deg,#d09cff,#763eff 62%,#ff4da6);color:#fff;font-size:14px;font-weight:950;letter-spacing:-1px;box-shadow:0 7px 24px #9b59ff55;transform:rotate(-5deg)}
-.brand-copy{display:grid;gap:2px}.brand-copy strong{font-size:19px;line-height:1;letter-spacing:.055em;font-weight:900}.brand-copy #h1t{background:linear-gradient(95deg,var(--fg),#c39cff 52%,var(--fg));background-size:200% 100%;color:transparent;-webkit-background-clip:text;background-clip:text}.brand-copy #cnt{display:block;font-size:8px;color:var(--mut);letter-spacing:.12em;font-weight:750;line-height:1.2}
-.main-nav{display:flex;align-items:center;gap:30px;margin-left:auto;margin-right:clamp(22px,5vw,68px)}
-.main-nav a{color:var(--mut);text-decoration:none;font-size:13px;font-weight:650;transition:color .2s}.main-nav a:hover{color:var(--fg)}
-.header-actions{display:flex;align-items:center;gap:9px}
-#favb.hb,.profile-button{width:42px;height:42px;border:1px solid color-mix(in srgb,var(--fg) 10%,transparent);background:var(--card);border-radius:50%;transition:background .2s,border-color .2s,transform .2s}
-#favb.hb:hover,.profile-button:hover{background:color-mix(in srgb,var(--a) 20%,var(--card));border-color:color-mix(in srgb,var(--a) 55%,transparent);transform:translateY(-2px)}
-#favb.hb.on{color:#d9b9ff;background:#a77bff20;border-color:#a77bff66}
-.profile-button{display:grid;place-items:center;color:#fff;background:linear-gradient(135deg,#292036,#17131e);box-shadow:inset 0 0 0 1px #ffffff10}
-.profile-button svg{width:21px;height:21px}
-main{max-width:1320px;margin:0 auto;padding:clamp(18px,3.2vw,42px) clamp(18px,4vw,52px) 150px}
-.intro{position:relative;isolation:isolate;overflow:hidden;min-height:250px;margin:8px 0 38px;padding:clamp(26px,5vw,58px);display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;border:1px solid #ffffff12;border-radius:28px;background:linear-gradient(112deg,#18131feF 0%,#17111de8 49%,#21152ad9 100%);box-shadow:0 28px 90px #0004}
-[data-theme=light] .intro{background:linear-gradient(112deg,#fff 0%,#f5effa 60%,#f7eafa 100%);border-color:#20172b12;box-shadow:0 22px 70px #321c4514}
-.intro:before{content:"";position:absolute;z-index:-1;width:420px;height:420px;right:8%;top:-62%;border-radius:50%;background:radial-gradient(circle,#974bdf44,transparent 68%);filter:blur(8px)}
-.intro:after{content:"";position:absolute;z-index:-1;right:0;bottom:0;width:43%;height:100%;background:linear-gradient(90deg,transparent,#a64bff10);pointer-events:none}
-.intro-copy{max-width:710px}.eyebrow{display:inline-flex;align-items:center;gap:9px;color:#d9b9ff;text-transform:uppercase;letter-spacing:.17em;font-size:10px;font-weight:800}
-.eyebrow i,.live-dot{width:7px;height:7px;border-radius:50%;background:#b88cff;box-shadow:0 0 14px #b88cff;display:inline-block}
-.intro h2{display:block;margin:18px 0 12px;font-size:clamp(38px,6.8vw,76px);line-height:.98;letter-spacing:-.065em;font-weight:850;max-width:780px}
-.intro h2 span{color:#bd90ff}
-.intro p{max-width:540px;color:var(--mut);font-size:15px;line-height:1.7;margin-bottom:22px}
-.intro-link{display:inline-flex;align-items:center;gap:12px;text-decoration:none;color:#fff;background:linear-gradient(120deg,#9b61ed,#7644d4);padding:13px 17px;border-radius:12px;font-size:11px;font-weight:850;letter-spacing:.09em;box-shadow:0 8px 25px #9150df3a;transition:transform .22s,box-shadow .22s}
-.intro-link:hover{transform:translateY(-2px);box-shadow:0 12px 32px #9150df62}.intro-link svg{width:16px;height:16px}
-.intro-art{width:clamp(145px,23vw,270px);height:clamp(145px,23vw,270px);position:relative;display:grid;place-items:center;margin-right:3vw;filter:drop-shadow(0 22px 48px #9048e42a)}
-.intro-disc{position:absolute;width:82%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at center,#20172c 0 8%,#bd90ff 8.5% 10%,#21182b 10.5% 16%,#ffffff16 16.5% 17%,transparent 17.5%),repeating-radial-gradient(circle,#ffffff08 0 1px,#ffffff02 1px 5px),conic-gradient(from -40deg,#39224e,#19151e,#6e367f,#241b2d,#39224e);box-shadow:0 0 0 1px #ffffff1c,0 0 50px #9d56e52b;animation:disc-float 8s ease-in-out infinite}
-.intro-disc:after{content:"GR";position:absolute;inset:0;display:grid;place-items:center;font-weight:950;font-size:clamp(20px,3.5vw,40px);letter-spacing:-.08em;color:#f2e9ff;text-shadow:0 0 22px #b783ff}
-.intro-bars{position:absolute;inset:12%;display:flex;align-items:center;justify-content:space-between;opacity:.72;transform:rotate(-22deg)}
-.intro-bars i{width:2px;height:var(--h);border-radius:2px;background:linear-gradient(transparent,#c28dff,transparent);box-shadow:0 0 10px #c28dff88}
-@keyframes disc-float{50%{transform:rotate(8deg) scale(1.025)}}
-.live-count{position:absolute;right:24px;bottom:22px;display:flex;align-items:center;gap:8px;color:var(--mut);font-size:10px;letter-spacing:.12em;text-transform:uppercase}
-.catalog-block{margin-top:38px;scroll-margin-top:100px}.section-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin:0 0 18px}
-.section-kicker{font-size:10px;color:var(--mut);letter-spacing:.18em;text-transform:uppercase;font-weight:800;display:block;margin-bottom:7px}
-.section-head h2{font-size:clamp(24px,3vw,34px);line-height:1;letter-spacing:-.045em;margin:0;animation:none}
-.section-head h2 b{background:#a77bff1b;color:#d3b7ff;padding:5px 10px;margin-left:7px;font-size:12px;vertical-align:middle;border:1px solid #a77bff24}
-.section-note{font-size:12px;color:var(--mut);padding-bottom:3px}
-.hero{min-height:clamp(280px,35vw,430px);margin:0 0 42px;padding:clamp(24px,4.6vw,54px);border-radius:26px;border:1px solid #ffffff20;box-shadow:0 28px 85px color-mix(in srgb,var(--c,#8b5cf6) 26%,#000);transition:transform .5s,box-shadow .5s}
-.hero:hover{transform:translateY(-3px);box-shadow:0 34px 100px color-mix(in srgb,var(--c,#8b5cf6) 34%,#000)}
-.hero:after{background:linear-gradient(90deg,#07050edb 0%,#0906109c 46%,#09061026 100%),linear-gradient(0deg,#08060cc9,transparent 65%)}
-.hero img{object-position:center 45%;filter:saturate(.8);transition:transform 9s ease,filter .6s}.hero:hover img{filter:saturate(1.05)}
-.hero>div{align-items:flex-end}.hero h3{font-size:clamp(38px,7vw,78px);letter-spacing:-.07em;line-height:.95;max-width:740px;text-wrap:balance}
-.hero p{font-size:15px;max-width:500px;line-height:1.6;opacity:.8;margin-top:12px}
-.hero .tag{display:inline-flex;align-items:center;gap:8px;margin-bottom:17px;padding:7px 11px;border:1px solid #ffffff39;border-radius:8px;background:#140e1e83;backdrop-filter:blur(12px);font-size:9px;letter-spacing:.14em;text-transform:uppercase;font-weight:800}
-.hero .tag:before{content:"";width:6px;height:6px;border-radius:50%;background:#c5ff78;box-shadow:0 0 10px #c5ff78}
-.pb{width:76px;height:76px;font-size:0;color:#100d14;box-shadow:0 10px 30px #0006;transition:transform .28s,background .28s}
-.pb:after{content:"";width:0;height:0;border-top:10px solid transparent;border-bottom:10px solid transparent;border-left:15px solid currentColor;margin-left:4px}
-.pb:hover{transform:scale(1.08);background:#cda7ff}
-.grid{grid-template-columns:repeat(auto-fill,minmax(min(100%,205px),1fr));gap:18px}
-.card{aspect-ratio:1/1.04;border-radius:20px;border:1px solid #ffffff14;box-shadow:0 12px 36px #0004;background-color:#18131f!important;transition:transform .45s cubic-bezier(.2,.9,.3,1),box-shadow .45s,border-color .3s!important}
-.card:after{background:linear-gradient(180deg,#08060d00 35%,#08060d4d 57%,#08060de8 100%)}
-.card img{filter:saturate(.82);transition:transform .75s cubic-bezier(.2,.9,.3,1),filter .5s}.card:hover img{filter:saturate(1.12)}
-.card .t{font-size:16px;letter-spacing:-.025em;display:grid;gap:5px;max-width:calc(100% - 8px)}
-.card-sub{font-size:11px;font-weight:550;opacity:.67;letter-spacing:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.card.on{outline:2px solid #c59cff;outline-offset:3px}
-.card .cd span{backdrop-filter:blur(10px);background:#09070cd9;border:1px solid #ffffff1e;padding:8px 0}
-.srch{max-width:360px;padding:12px 16px 12px 42px;border:1px solid color-mix(in srgb,var(--fg) 10%,transparent);background:var(--card) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23aaa2b3' stroke-width='2' stroke-linecap='round'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cpath d='m16 16 4 4'/%3E%3C/svg%3E") no-repeat 14px center/17px;color:var(--fg);margin:0}
-.srch::placeholder{color:var(--mut)}
-.empty{padding:clamp(42px,9vw,100px) 24px;border:1px dashed color-mix(in srgb,var(--fg) 18%,transparent);background:linear-gradient(140deg,#ffffff06,#a77bff09);border-radius:24px}
-.empty big{font-size:48px;filter:drop-shadow(0 8px 22px #a77bff55)}
-.empty p{max-width:390px;margin:0 auto;color:var(--mut);line-height:1.6}
-.site-footer{max-width:1320px;margin:0 auto;padding:28px clamp(18px,4vw,52px) 34px;border-top:1px solid color-mix(in srgb,var(--fg) 8%,transparent);display:flex;align-items:center;justify-content:space-between;gap:20px;color:var(--mut);font-size:11px;letter-spacing:.02em}
-.site-footer strong{color:var(--fg);letter-spacing:.12em}.site-footer span:last-child{text-align:right}
-#bar{max-width:740px;left:50%;right:auto;transform:translate(-50%,120%);bottom:calc(env(safe-area-inset-bottom) + 18px);grid-template-columns:58px minmax(0,1fr) 48px;padding:10px 14px 13px;border:1px solid #ffffff18;background:color-mix(in srgb,var(--glass) 88%,transparent);backdrop-filter:blur(24px) saturate(1.4);box-shadow:0 18px 64px #0009}
-#bar.show{animation:bar-in .5s cubic-bezier(.2,.9,.3,1.1) forwards}@keyframes bar-in{to{transform:translate(-50%,0)}}
-#bc{border:1px solid #ffffff24;box-shadow:0 6px 18px #0005}.play{box-shadow:0 8px 22px #0003}
-#np{background:radial-gradient(ellipse at 50% 8%,color-mix(in srgb,var(--a) 26%,transparent),transparent 56%),#0b0910}
-#np .tabs{border:1px solid #ffffff12;background:#ffffff0a;backdrop-filter:blur(16px)}
-#np .sc[data-k=c],#np .sc[data-k=q]{background:#ffffff08;border:1px solid #ffffff10;backdrop-filter:blur(12px)}
-#np .art{border:1px solid #ffffff24;box-shadow:0 30px 90px #0009,0 0 44px color-mix(in srgb,var(--a) 25%,transparent)}
-.btn{box-shadow:0 8px 22px color-mix(in srgb,var(--a) 22%,transparent);transition:transform .18s,filter .18s,box-shadow .18s}.btn:hover{filter:brightness(1.08);box-shadow:0 10px 28px color-mix(in srgb,var(--a) 32%,transparent)}
-.in,.srch{transition:background .2s,border-color .2s,box-shadow .2s}.in{border:1px solid color-mix(in srgb,var(--fg) 10%,transparent)}.in:focus,.srch:focus{outline:0;border-color:color-mix(in srgb,var(--a) 65%,transparent);box-shadow:0 0 0 3px color-mix(in srgb,var(--a) 18%,transparent)}
-button:focus-visible,a:focus-visible,.card:focus-visible{outline:2px solid #c29aff!important;outline-offset:4px}
-@media(max-width:760px){header.site-header{min-height:66px;padding-top:calc(env(safe-area-inset-top) + 10px);padding-bottom:10px}.brand-mark{width:38px;height:38px}.brand-copy strong{font-size:17px}.brand-copy small{font-size:8px}.main-nav{gap:18px;margin-right:17px}.main-nav a{font-size:12px}main{padding-top:18px}.intro{grid-template-columns:minmax(0,1fr) auto;min-height:230px;margin-bottom:28px;padding:28px 24px}.intro-art{width:clamp(100px,24vw,170px);height:clamp(100px,24vw,170px);margin-right:-10px}.intro h2{font-size:clamp(36px,8vw,58px)}.intro p{font-size:13px}.hero{min-height:300px;padding:25px;border-radius:22px}.hero h3{font-size:clamp(37px,9vw,60px)}.pb{width:58px;height:58px}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.card{border-radius:16px}.card .t{font-size:14px}.site-footer{padding-bottom:120px}}
-@media(max-width:480px){header.site-header{padding-left:16px;padding-right:16px}.brand{gap:9px}.brand-mark{width:35px;height:35px;border-radius:11px}.brand-copy strong{font-size:15px}.brand-copy small{letter-spacing:.12em;font-size:7px}.main-nav{gap:13px;margin-right:12px}.main-nav a{font-size:11px}.header-actions{gap:6px}#favb.hb,.profile-button{width:36px;height:36px}.main-nav a:first-child{display:none}main{padding-left:16px;padding-right:16px}.intro{min-height:218px;padding:25px 20px;margin-top:3px}.intro-art{position:absolute;right:6px;top:11px;width:122px;height:122px;opacity:.56}.intro-copy{position:relative;z-index:1}.intro h2{font-size:43px;max-width:300px;margin-top:16px}.intro p{max-width:275px;font-size:12px;margin-bottom:17px}.intro-link{font-size:9px;padding:11px 13px}.live-count{right:16px;bottom:14px;font-size:8px}.hero{min-height:275px;padding:20px;margin-bottom:32px}.hero>div{gap:8px}.hero h3{font-size:39px;max-width:290px}.hero p{font-size:12px}.hero .tag{font-size:8px;margin-bottom:13px}.pb{width:50px;height:50px}.pb:after{border-top-width:7px;border-bottom-width:7px;border-left-width:11px}.section-head{align-items:start;flex-direction:column;gap:7px}.section-head h2{font-size:27px}.section-note{font-size:10px}.grid{gap:10px}.card{aspect-ratio:1/1.08}.card .t{font-size:13px;padding-bottom:2px}.card-sub{font-size:10px}.site-footer{font-size:9px;padding-left:16px;padding-right:16px}.site-footer span:last-child{max-width:130px}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.intro-disc{animation:none}.hero,.card,.hero img,.card img,.pb,.intro-link{transition:none!important}}
 </style></head><body>
 <div class="blobs"><i></i><i></i><i></i></div>
 <div class="side-visuals" aria-hidden="true">
@@ -706,8 +622,8 @@ button:focus-visible,a:focus-visible,.card:focus-visible{outline:2px solid #c29a
   <svg class="right" viewBox="0 0 180 800" preserveAspectRatio="none"><path d="M150 0 C18 90 18 170 145 250 S25 410 135 500 S30 690 150 800"/><path d="M115 0 C5 130 165 190 80 300 S170 440 75 560 S155 700 95 800"/><path d="M165 0 C80 150 155 235 110 380 S170 540 100 660 S160 760 120 800"/></svg>
 </div>
 <div id="scene">
-<header class="site-header"><a class="brand" href="#home" aria-label="GOONRAP — главная"><span class="brand-mark" aria-hidden="true">GR</span><span class="brand-copy"><strong id="h1t">GOONRAP</strong><small id="cnt"></small></span></a><nav class="main-nav" aria-label="Навигация"><a href="#home">Главная</a><a id="releasesNav" href="#releases">Релизы</a></nav><div class="header-actions"><button id="favb" class="hb" aria-label="Избранное"><svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M6 3h12v18l-6-4-6 4z"/></svg></button><button id="prof" class="profile-button" aria-label="Профиль"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="3.4"/><path d="M5.5 20a6.5 6.5 0 0 1 13 0"/></svg></button></div></header>
-<main id="catalog"><div id="app"></div></main><footer class="site-footer"><span><strong>GOONRAP</strong> · <span>Музыка соединяет</span></span><span>Независимая музыка. Новые релизы.</span></footer>
+<header><h1><span id="h1t">GOONRAP</span><small id="cnt"></small></h1><div style="display:flex;gap:10px"><button id="favb" class="hb" aria-label="Favorites"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"><path d="M6 3h12v18l-6-4-6 4z"/></svg></button><button id="prof" aria-label="Profile">👤</button></div></header>
+<main><div id="app"></div></main>
 </div>
 <div id="bar"><div id="bc"></div><div style="min-width:0;cursor:pointer" id="bm"><div id="bt"></div><div class="er" id="opn">Открыть плеер</div></div><button class="play" id="play" aria-label="Play"><svg class="ip" viewBox="0 0 24 24"><path d="M8.2 5.4v13.2c0 .8.9 1.3 1.6.8l10-6.6c.6-.4.6-1.2 0-1.6l-10-6.6c-.7-.5-1.6 0-1.6.8z" fill="currentColor"/></svg><svg class="is" viewBox="0 0 24 24"><rect x="6" y="5" width="4.2" height="14" rx="1.6" fill="currentColor"/><rect x="13.8" y="5" width="4.2" height="14" rx="1.6" fill="currentColor"/></svg></button><div id="bp"><i></i></div></div>
 <div id="np" data-tab="p">
@@ -754,14 +670,10 @@ Object.assign(T.en,{"Управление":"Manage track","Редактиров�
 Object.assign(T.sk,{"Управление":"Spravovať skladbu","Редактировать":"Upraviť skladbu","Удалить":"Odstrániť skladbu","Отмена":"Zrušiť","Сохранить":"Uložiť zmeny","Подтвердите удаление":"Potvrdiť odstránenie","Вы уверены, что хотите удалить этот трек? Это действие нельзя отменить.":"Naozaj chcete odstrániť túto skladbu? Túto akciu nemožno vrátiť späť.","Название трека":"Názov skladby","Иконка / обложка":"Ikona / obal skladby","Заменить изображение":"Vybrať nový obrázok","Удалить обложку":"Odstrániť obal","Изображение обновлено":"Obrázok aktualizovaný","Изменения сохранены":"Zmeny uložené","Трек удалён":"Skladba odstránená","Введите название трека":"Zadajte názov skladby","Не удалось сохранить изменения":"Zmeny sa nepodarilo uložiť","Не удалось удалить трек":"Skladbu sa nepodarilo odstrániť"});
 Object.assign(T.en,{"Редактировать трек":"Edit track","Отмена":"Cancel"});Object.assign(T.sk,{"Редактировать трек":"Upraviť skladbu","Отмена":"Zrušiť"});
 Object.assign(T.en,{"Что дальше": "Up next", "Сейчас играет": "Now playing", "Перемешано": "Shuffled", "Порядок по умолчанию": "Default order"});Object.assign(T.sk,{"Что дальше": "Ďalej v rade", "Сейчас играет": "Teraz hrá", "Перемешано": "Premiešané", "Порядок по умолчанию": "Pôvodné poradie"});
-Object.assign(T.en,{"Главная":"Home","Релизы":"Releases","Музыка соединяет":"Music connects us","Независимая музыка. Новые релизы.":"Independent music. New releases.","НЕЗАВИСИМАЯ МУЗЫКА":"INDEPENDENT MUSIC","GOONRAP — площадка для свежих рэп-релизов и независимого звучания.":"GOONRAP is a home for fresh rap releases and independent sounds.","СЛУШАТЬ РЕЛИЗЫ":"EXPLORE RELEASES","ПОСМОТРЕТЬ АНОНСЫ":"VIEW ANNOUNCEMENTS","СМОТРЕТЬ КАТАЛОГ":"VIEW CATALOG","ВЫБРАНО GOONRAP":"GOONRAP SELECTS","СЕЙЧАС В ЭФИРЕ":"NOW PLAYING","КАТАЛОГ":"THE CATALOG","ОТКРЫТЬ ТРЕК":"OPEN TRACK","Независимые релизы":"Independent releases","ПО СВЕЖЕСТИ":"LATEST FIRST","ТРЕКОВ В КАТАЛОГЕ":"TRACKS IN THE CATALOG","Уже скоро":"Coming soon","Релиз":"Release","Играть":"Play","ВАШ ВЫБОР":"YOUR PICKS","Свежий релиз":"Fresh release","Избранное":"Favorites","Профиль":"Profile","GOONRAP — главная":"GOONRAP — home","Навигация":"Navigation"});
-Object.assign(T.sk,{"Главная":"Domov","Релизы":"Vydania","Музыка соединяет":"Hudba spája","Независимая музыка. Новые релизы.":"Nezávislá hudba. Nové vydania.","НЕЗАВИСИМАЯ МУЗЫКА":"NEZÁVISLÁ HUDBA","GOONRAP — площадка для свежих рэп-релизов и независимого звучания.":"GOONRAP prináša čerstvé rapové vydania a nezávislý zvuk.","СЛУШАТЬ РЕЛИЗЫ":"OBJAVIŤ VYDANIA","ПОСМОТРЕТЬ АНОНСЫ":"ZOBRAZIŤ OZNÁMENIA","СМОТРЕТЬ КАТАЛОГ":"ZOBRAZIŤ KATALÓG","ВЫБРАНО GOONRAP":"VÝBER GOONRAP","СЕЙЧАС В ЭФИРЕ":"PRÁVE VYDANÉ","КАТАЛОГ":"KATALÓG","ОТКРЫТЬ ТРЕК":"OTVORIŤ SKLADBU","Независимые релизы":"Nezávislé vydania","ПО СВЕЖЕСТИ":"NAJNOVŠIE","ТРЕКОВ В КАТАЛОГЕ":"SKLADIEB V KATALÓGU","Уже скоро":"Už čoskoro","Релиз":"Vydanie","Играть":"Prehrať","ВАШ ВЫБОР":"VÁŠ VÝBER","Свежий релиз":"Nové vydanie","Избранное":"Obľúbené","Профиль":"Profil","GOONRAP — главная":"GOONRAP — domov","Навигация":"Navigácia"});
-Object.assign(T.en,{"Новые релизы":"New releases","появляются здесь.":"appear here.","Свежие треки и анонсы GOONRAP — в одном месте.":"Fresh tracks and upcoming GOONRAP releases, all in one place."});
-Object.assign(T.sk,{"Новые релизы":"Nové vydania","появляются здесь.":"nájdeš tu.","Свежие треки и анонсы GOONRAP — в одном месте.":"Čerstvé skladby a novinky GOONRAP nájdeš na jednom mieste."});
 let lang=(()=>{try{return localStorage.getItem("lang")||"en"}catch(e){return"en"}})();
 const tr=s=>(T[lang]||{})[s]||s;
 function trAll(){const D=T[lang];if(!D)return;const w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);let n;while(n=w.nextNode()){const v=n.nodeValue.trim();if(D[v])n.nodeValue=n.nodeValue.replace(v,D[v])}
-document.querySelectorAll("[placeholder]").forEach(e=>{const v=e.getAttribute("placeholder");if(D[v])e.setAttribute("placeholder",D[v])});document.querySelectorAll("[aria-label]").forEach(e=>{const v=e.getAttribute("aria-label");if(D[v])e.setAttribute("aria-label",D[v])})}
+document.querySelectorAll("[placeholder]").forEach(e=>{const v=e.getAttribute("placeholder");if(D[v])e.setAttribute("placeholder",D[v])})}
 const $=s=>document.querySelector(s),au=$("#au"),seen=new Set();
 const st=(k,v)=>{try{if(v===undefined)return localStorage.getItem(k);localStorage.setItem(k,v)}catch(e){return null}};
 let tracks=[],cur=null,code=st("code")||"",admin=false,q="",armed=null;
@@ -785,16 +697,15 @@ const PRE=[[[25,95,55],[330,85,50]],[[200,90,50],[260,85,55]],[[300,95,55],[170,
 const dl=t=>admin?`<div class="track-tools"><button class="dots" type="button" data-menu-toggle="${t.id}" aria-label="${tr("Управление")}"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="5" cy="12" r="1.8"/><circle cx="12" cy="12" r="1.8"/><circle cx="19" cy="12" r="1.8"/></svg></button><div class="track-menu" data-track-menu="${t.id}" hidden><button type="button" data-track-edit="${t.id}">✎ &nbsp;${tr("Редактировать")}</button><button type="button" class="danger" data-track-delete="${t.id}">⌫ &nbsp;${tr("Удалить")}</button></div></div>`:"";
 const img=t=>t.cover?`<img loading="lazy" decoding="async" src="${U(t,"cover")}" alt="">`:"";
 function card(t,i,lock){const n=!seen.has(t.id);seen.add(t.id);
-return `<div class="card ${n?"new":""} ${an(t)} ${lock?"lock":""} ${cur===t.id?"on":""}" role="button" tabindex="0" aria-label="${esc(t.title)} — ${tr("ОТКРЫТЬ ТРЕК")}" style="--c:${t.color};--i:${i};background:${bg(t)}" data-id="${t.id}">${img(t)}${lock?`<div class="cd" data-t="${t.id}">${cd(t)}</div>`:`<div class="eq"><i></i><i></i><i></i><i></i></div>`}${dl(t)}<span class="t">${esc(t.title)}<small class="card-sub">${esc(t.desc||tr("Релиз"))}</small></span></div>`}
-function landing(){const hasReleased=out().length,hasUpcoming=soon().length,target=hasReleased?"#releases":hasUpcoming?"#announcements":"#catalog",action=hasReleased?tr("СЛУШАТЬ РЕЛИЗЫ"):hasUpcoming?tr("ПОСМОТРЕТЬ АНОНСЫ"):tr("СМОТРЕТЬ КАТАЛОГ");return `<section class="intro" id="home"><div class="intro-copy"><span class="eyebrow"><i></i>${tr("НЕЗАВИСИМАЯ МУЗЫКА")}</span><h2>${tr("Новые релизы")} <span>${tr("появляются здесь.")}</span></h2><p>${tr("Свежие треки и анонсы GOONRAP — в одном месте.")}</p><a class="intro-link" href="${target}">${action}<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 5l7 7-7 7"/></svg></a></div><div class="intro-art" aria-hidden="true"><div class="intro-disc"></div><div class="intro-bars">${[18,25,34,47,39,61,49,76,58,86,64,49,73,52,39,62,43,28,18].map(h=>`<i style="--h:${h}%"></i>`).join("")}</div></div><div class="live-count"><i class="live-dot"></i><span>${String(tracks.length).padStart(2,"0")} ${tr("ТРЕКОВ В КАТАЛОГЕ")}</span></div></section>`}
+return `<div class="card ${n?"new":""} ${an(t)} ${lock?"lock":""} ${cur===t.id?"on":""}" role="button" tabindex="0" aria-label="${esc(t.title)}" style="--c:${t.color};--i:${i};background:${bg(t)}" data-id="${t.id}">${img(t)}${lock?`<div class="cd" data-t="${t.id}">${cd(t)}</div>`:`<div class="eq"><i></i><i></i><i></i><i></i></div>`}${dl(t)}<span class="t">${esc(t.title)}</span></div>`}
 function render(){const o=out(),s=soon(),l=o.filter(t=>t.title.toLowerCase().includes(q.toLowerCase()));let h="";
-$("#cnt").textContent=tracks.length?`${o.length} ${tr("в эфире")}`+(s.length?` · ${s.length} ${tr("скоро")}`:""):"";$("#releasesNav").href=o.length?"#releases":s.length?"#announcements":"#catalog";
-if(fv){const f=o.filter(t=>fav.has(t.id));$("#app").innerHTML=`<section class="catalog-block"><div class="section-head"><div><span class="section-kicker">${tr("ВАШ ВЫБОР")}</span><h2>${tr("Избранное")} <b>${f.length}</b></h2></div></div></section>`+(f.length?`<div class="grid">${f.map((t,i)=>card(t,i)).join("")}</div>`:`<div class="empty"><big>♡</big><h2 style="justify-content:center;margin:12px 0 6px">${tr("В избранном пока пусто")}</h2></div>`);return}
-if(!tracks.length)h=`${landing()}<div class="empty"><big>🎧</big><h2 style="justify-content:center;margin:12px 0 6px">${tr("Здесь пока ничего нет")}</h2><p>${tr("Независимые релизы")}</p></div>`;
-else{h=landing();const t=o[0];if(t)h+=`<div class="section-head"><div><span class="section-kicker">${tr("ВЫБРАНО GOONRAP")}</span><h2>${tr("Свежий релиз")}</h2></div><span class="section-note">${tr("СЕЙЧАС В ЭФИРЕ")}</span></div><div class="hero ${an(t)}" data-id="${t.id}" style="--c:${t.color};background:${bg(t)}">${img(t)}<div><div><span class="tag">${tr("Новинка")}</span><h3>${esc(t.title)}</h3>${t.desc?`<p>${esc(t.desc)}</p>`:""}</div><button class="pb" aria-label="${tr("Играть")}"></button></div>${dl(t)}</div>`;
-if(s.length)h+=`<section class="catalog-block" id="announcements"><div class="section-head"><div><span class="section-kicker">${tr("Уже скоро")}</span><h2>${tr("Анонсы")} <b>${s.length}</b></h2></div><span class="section-note">${tr("Независимые релизы")}</span></div><div class="grid">${s.map((t,i)=>card(t,i,1)).join("")}</div></section>`;
-if(o.length)h+=`<section class="catalog-block" id="releases"><div class="section-head"><div><span class="section-kicker">${tr("КАТАЛОГ")}</span><h2>${tr("Вышедшие треки")} <b>${o.length}</b></h2></div><span class="section-note">${tr("ПО СВЕЖЕСТИ")}</span></div>${o.length>3?`<input class="srch" id="q" placeholder="Поиск по названию" value="${esc(q)}" aria-label="${tr("Поиск по названию")}">`:""}<div class="grid" id="gr">${l.map((t,i)=>card(t,i)).join("")||`<p class="er">${tr("Ничего не найдено")}</p>`}</div></section>`}
-$("#app").innerHTML=h;const qi=$("#q");if(qi)qi.oninput=e=>{q=e.target.value;const g=$("#gr");g.innerHTML=out().filter(t=>t.title.toLowerCase().includes(q.toLowerCase())).map((t,i)=>card(t,i)).join("")||`<p class="er">${tr("Ничего не найдено")}</p>`}}
+$("#cnt").textContent=tracks.length?`${o.length} ${tr("в эфире")}`+(s.length?` · ${s.length} ${tr("скоро")}`:""):"";
+if(fv){const f=o.filter(t=>fav.has(t.id));$("#app").innerHTML=`<h2>Избранное <b>${f.length}</b></h2>`+(f.length?`<div class="grid">${f.map((t,i)=>card(t,i)).join("")}</div>`:`<p class="empty">В избранном пока пусто</p>`);return}
+if(!tracks.length)h=`<div class="empty"><big>🎧</big><h2 style="justify-content:center;margin:12px 0 6px">Здесь пока ничего нет</h2></div>`;
+else{const t=o[0];if(t)h+=`<div class="hero ${an(t)}" data-id="${t.id}" style="--c:${t.color};background:${bg(t)}">${img(t)}<div><div><span class="tag">Новинка</span><h3>${esc(t.title)}</h3>${t.desc?`<p>${esc(t.desc)}</p>`:""}</div><button class="pb" aria-label="Играть">▶</button></div>${dl(t)}</div>`;
+if(s.length)h+=`<h2>Анонсы <b>${s.length}</b></h2><div class="grid">${s.map((t,i)=>card(t,i,1)).join("")}</div>`;
+if(o.length)h+=`<h2>Вышедшие треки <b>${o.length}</b></h2>${o.length>6?`<input class="srch" id="q" placeholder="Поиск по названию" value="${esc(q)}">`:""}<div class="grid" id="gr">${l.map((t,i)=>card(t,i)).join("")||`<p class="er">Ничего не найдено</p>`}</div>`}
+$("#app").innerHTML=h;const qi=$("#q");if(qi)qi.oninput=e=>{q=e.target.value;const g=$("#gr");g.innerHTML=out().filter(t=>t.title.toLowerCase().includes(q.toLowerCase())).map((t,i)=>card(t,i)).join("")||`<p class="er">Ничего не найдено</p>`}}
 async function load(){try{tracks=await (await api("tracks")).json()}catch(e){}render()}
 let sceneTimer=0;
 function sceneSwap(){}
